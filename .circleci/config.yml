@@ -40,8 +40,11 @@ jobs:
       - run:
           name: Running cypress tests 1
           command: >-
-            if $(npm bin)/cypress run --spec cypress/integration/sample1.spec.js
-            then echo 'pass'; else echo 'fail'; fi
+            if $(npm bin)/cypress run --spec cypress/integration/sample1.spec.js; then
+              echo 'pass';
+            else
+              echo 'fail';
+            fi
   test2:
     working_directory: ~/tmp
     docker:
@@ -56,8 +59,11 @@ jobs:
       - run:
           name: Running cypress tests 2
           command: >-
-            if $(npm bin)/cypress run --spec cypress/integration/sample2.spec.js
-            then echo 'pass'; else echo 'fail'; fi
+            if $(npm bin)/cypress run --spec cypress/integration/sample2.spec.js; then
+              echo 'pass';
+            else
+              echo 'fail';
+            fi
 workflows:
   version: 2
   build_and_test:
